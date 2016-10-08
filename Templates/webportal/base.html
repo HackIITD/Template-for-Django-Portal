@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Pokemon.com</title>
+    
+    <meta name="description" content="vaibsharma.github.io | This is the Pokemon Geek's page you can say , you can hack around it , can bring new pokemons wherever you find it , find them by there database id and a lot more . Get this project at github.com/vaibsharma/SearchApp"/>
+<!-- 
+    {% load staticfiles %}
+    <link rel="rel"
+          type="image/ico"
+          href="{% static 'favicon.ico' %}"> -->
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/vaibsharma/PokemonSearch/master/static/favicon.ico" type="image/x-icon" />
+
+  <meta itemprop="name" content="SearchPokemon" />
+  
+  <meta itemprop="description" content="vaibsharma.github.io | This is the Pokemon Geek's page you can say , you can hack around it , can bring new pokemons wherever you find it , find them by there database id and a lot more . Get this project at github.com/vaibsharma/SearchApp"">
+
+  <meta itemprop="image" content="https://rawgit.com/vaibsharma/PokemonSearch/master/Screenshot%20from%202016-08-28%2005:00:37.png">
+
+  <meta property="og:title" content="SearchPokemon"/>
+  <meta property="og:description" content="vaibsharma.github.io | This is the Pokemon Geek's page you can say , you can hack around it , can bring new pokemons in search list from wherever you find it , find them by there database id and a lot more . Get the source code from https://github.com/vaibsharma/PokemonSearch.git""/>
+  <meta property="og:image" content="https://rawgit.com/vaibsharma/PokemonSearch/master/Screenshot%20from%202016-08-28%2005:00:37.png"/> 
+  <meta property="og:site_name" content="enigmatic-basin-68757.herokuapp.com"/> 
+
+  <meta property="og:url" content="enigmatic-basin-68757.herokuapp.com" />
+  <meta property="article:author" content="http://facebook.com/techobist" />
+  <meta property="article:publisher" content="https://www.facebook.com/techobist"/>
+
+  
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@HRmVaib" />
+  <meta name="twitter:title" content="SearchPokemon" />
+  <!-- <meta name="twitter:description" content="" /> -->
+  <meta name="twitter:description" content="vaibsharma.github.io | This is the Pokemon Geek's page you can say , you can hack around it , can bring new pokemons in search list from wherever you find it , find them by there database id and a lot more . Get the source code from https://github.com/vaibsharma/PokemonSearch.git"" />
+  <meta name="twitter:image" content="https://rawgit.com/vaibsharma/PokemonSearch/master/Screenshot%20from%202016-08-28%2005:00:37.png" />
+          
+  <meta name="viewport" content="width=320, initial-scale=1" />
+
+
+
+
+        
+        
+
+    
+    
+    
+
+
+    <style type="text/css">
+    html body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  height: 90px;
+
+}
+nav img {
+  float: left;
+  width: 20%;
+}
+
+.footer1
+{
+  height:3%;
+  width:500px;
+  margin-top: 1%;
+  font-size:20px;
+  text-align: center;
+  background:rgba(0,0,0,0.4);
+  color: white;
+}
+html,body{
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+li a {
+  text-decoration: none;
+  color: white;
+  transition: background-color 1s ;
+}
+a:hover{
+  color:white;
+  border-radius:10%;
+  background-color: #fdd835 !important;
+}
+
+nav li {
+  display: inline;
+  padding-top: 6%;
+  font-size: 220%;
+  color: white;
+  transition : background-color 2000s ;
+}
+ li:hover{
+  text-decoration: none;
+  cursor: pointer ;
+
+}
+li{
+  height:50px;
+}
+
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    </style>
+   {% block style %}{% endblock %}    
+    
+  </head>
+
+  <body>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <img src="http://img08.deviantart.net/860a/i/2012/308/0/b/__hd___pokemon_logo___hd___by_peetzaahhh2010-d5k08gz.png"></img>
+      <ul class="nav navbar-nav">
+        <li class="active" id="search1"><a href="#" >Search<span class="sr-only">(current)</span></a></li>
+        <li id="add"><a href="#" >Add</a></li>
+        
+          <li class="dropdown">
+         
+    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Fun
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a id="game" href="#">Start with Pokemons</a></li>
+      
+    </ul>
+  
+
+         </li>
+         </ul>
+           <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Help</a></li>
+           
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+</div>
+</div>
+{% block searchContent %}{% endblock %}
+
+
+{% block images %}{% endblock %}
+<!-- Latest compiled and minified JavaScript -->
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+<div class="fb-comments" data-href="https://enigmatic-basin-68757.herokuapp.com/comments#configurator" data-numposts="5"></div>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="footer1">Copyright &#169 Vaibhav Sharma 2016.All Right Reserved</div>
+</div>
+</div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
+
+    <script type="text/javascript">
+      var data = {         
+ "background_change":function(){
+   $("html body").css("background-color","#ffe082");
+   $("nav").css("background-color","#f57f17");
+ },
+ "ListJS":function(){
+   var options = {
+  valueNames: [ 'images', 'name' ]
+};
+
+var userList = new List('users', options);
+ },
+  "Basehtmljs":function(){
+      $(".Text").typed({
+        strings: ["Hello Pokemon Geeks ","Presenting","Pokemon Kingdom" ,"Are you ready ?","So Count","3","2","1","Let's The Battle Begin !"],
+        typeSpeed: 30, // typing speed
+            backDelay: 750,
+      });
+ 
+
+  }
+};
+$(document).ready(function(){
+  data.background_change() ;
+  
+  $('#search1').click(function(){
+    window.location.href = '/search';
+  });
+   $('#add').click(function(){
+    window.location.href = '/add';
+  });
+  $('.dropdown-toggle').on("click",function(){
+    $("#game").on("click",function(){
+        window.location.href = '/fun/game';
+    });
+  })
+   window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1388033961226070',
+      xfbml      : true,
+      version    : 'v2.7',
+      status      : true
+    });
+
+    function onLogin(response) {
+  if (response.status == 'connected') {
+    FB.api('/me?fields=first_name', function(data) {
+      
+    });
+  }
+}
+
+FB.getLoginStatus(function(response) {
+  // Check login status on load, and if the user is
+  // already logged in, go directly to the welcome message.
+  if (response.status == 'connected') {
+    onLogin(response);
+  } else {
+    // Otherwise, show Login dialog first.
+    FB.login(function(response) {
+      onLogin(response);
+    }, {scope: 'user_friends, email'});
+  }
+});
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  
+  });      
+    
+  
+ 
+
+        </script>
+{% block scripts %}{% endblock %}
+    
+    
+  </body>
+</html>
