@@ -1,1 +1,1 @@
-web: gunicorn webportal.wsgi
+web: gunicorn portal_template.wsgi
