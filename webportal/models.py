@@ -4,7 +4,7 @@ from django.db import models
 class School(models.Model):
 	points = models.IntegerField(default = 0)
 	ranking = models.IntegerField(default = -1)             # -1 for no ranking 
-	ID = models.CharField(max_length=128,unique = True)
+	school_iD = models.CharField(max_length=128,unique = True)
 	name = models.CharField(max_length=128)
 	pincode = models.CharField(max_length=128)
 	
@@ -15,8 +15,8 @@ class Student(models.Model):
 	profile_picture = models.CharField(max_length=128,blank = True)
 	points = models.IntegerField(default = 0)
 	ranking = models.IntegerField(default = -1)             # -1 for no ranking 
-	ID = models.CharField(max_length=128,unique=True)
-	fb_ID = models.CharField(max_length=128,blank = True)
+	student_iD = models.CharField(max_length=128,unique=True)
+	fb_iD = models.CharField(max_length=128,blank = True)
 	school_name = models.CharField(max_length=128)
 	gender = models.CharField(max_length=128,blank = True)
 	name = models.CharField(max_length=128)

@@ -13,7 +13,7 @@ def index(request):
 	return render(request,"webportal/base.html",{"data":[None]})
 
 def account(request):
-	
+
 	return render(request,"webportal/account.html",{"data":[None]})	
 
 def Student_Rank():
@@ -43,11 +43,11 @@ def School_Rank():
 		return context
 
 def addStudent(name,mobile_number,school_name,pincode,password):
-	ID = school_name.lower()[0:2] + pincode + '_' + mobile_number
+	school_iD = school_name.lower()[0:2] + pincode + '_' + mobile_number
 	points = 0
 	ranking = -1
 	try:
-		p = Student.objects.get_or_create(ID = ID,mobile_number=mobile_number,
+		p = Student.objects.get_or_create(student_iD = student_iD,mobile_number=mobile_number,
 			name=name,password=password,school_name=school_name,points=points,ranking=ranking)[0]
 		p.save()
 		context = {"status":200,"report":"Saved successfully"}
@@ -57,11 +57,11 @@ def addStudent(name,mobile_number,school_name,pincode,password):
 		return context
 
 def addSchool(name,pincode):
-	ID = school_name.lower()[0:2] + pincode 
+	school_iD = school_name.lower()[0:2] + pincode 
 	points = 0
 	ranking = -1
 	try:
-		p = School.objects.get_or_create(ID = ID,pincode=pincode,
+		p = School.objects.get_or_create(school_iD = school_iD,pincode=pincode,
 			name=name,points=points,ranking=ranking)[0]
 		p.save()
 		context = {"status":200,"report":"Saved successfully"}
