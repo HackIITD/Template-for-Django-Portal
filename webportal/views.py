@@ -17,12 +17,12 @@ def Student_Rank():
 	arr = Student.objects.all()
 	arr.sort(key=lambda x : x.points)
 	try:
-		for a in range(0:3):
+		for a in range(0,3):
 			result_arr.append(json.dumps({"name":a.name,"profile":a.profile_picture,"points":a.points}))	
 		context = {"status":"200","data":result_arr}
 		return 	context
 	except:
-		context = {"status":403,"data"=[None]}
+		context = {"status":"403","data":[None]}
 		return context
 
 def School_Rank():
@@ -30,12 +30,12 @@ def School_Rank():
 	arr = School.objects.all()
 	arr.sort(key=lambda x : x.points)
 	try:
-		for a in range(0:3):
+		for a in range(0,3):
 			result_arr.append(json.dumps({"name":a.name,"profile":a.profile_picture,"points":a.points}))	
 		context = {"status":"200","data":result_arr}
 		return 	context
 	except:
-		context = {"status":403,"data"=[None]}
+		context = {"status":"403","data":[None]}
 		return context
 
 def addStudent(name,mobile_number,school_name,pincode,password):
@@ -58,11 +58,10 @@ def addSchool(name,pincode):
 	ranking = -1
 	try:
 		p = School.objects.get_or_create(ID = ID,pincode=pincode,
-			,name=name,points=points,ranking=ranking)[0]
+			name=name,points=points,ranking=ranking)[0]
 		p.save()
 		context = {"status":200,"report":"Saved successfully"}
 		return context
 	except:
 		context = {"status":403,"report":"Data not saved"}
-		return context		
-		
+		return context
