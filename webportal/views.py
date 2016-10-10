@@ -10,7 +10,11 @@ from pprint import pprint
 
 def index(request):
 
-	return render(request,"webportal/account.html",{"data":[None]})
+	return render(request,"webportal/base.html",{"data":[None]})
+
+def account(request):
+	
+	return render(request,"webportal/account.html",{"data":[None]})	
 
 def Student_Rank():
 	result_arr = []

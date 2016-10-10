@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',"webportal.views.index",name="homepage"),
+    url(r'^account$',"webportal.views.account",name="account"),
 )
