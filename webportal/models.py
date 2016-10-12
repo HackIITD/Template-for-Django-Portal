@@ -1,5 +1,5 @@
 from django.db import models
-
+from webportal.randomprofile import randomProfile
 # Create your models here.
 class School(models.Model):
 	points = models.IntegerField(default = 0)
@@ -11,8 +11,18 @@ class School(models.Model):
 	def __unicode__(self):
 		return self.name
 
+class Teachers(models.Model):
+	profile_picture = models.CharField(max_length=128,default=randomProfile())
+	name = models.CharField(max_length=128)
+	mobile_no = models.CharField(max_length=128)
+	password = models.CharField(max_length=128)
+	teaher_id = models.CharField(max_length=128,unique=True)
+
+	def __unicode__(self):
+		return self.name
+
 class Student(models.Model):
-	profile_picture = models.CharField(max_length=128,blank = True)
+	profile_picture = models.CharField(max_length=128,default=randomProfile())
 	points = models.IntegerField(default = 0)
 	ranking = models.IntegerField(default = -1)             # -1 for no ranking 
 	student_iD = models.CharField(max_length=128,unique=True)
@@ -33,7 +43,8 @@ class Questions(models.Model):
 	option1 = models.CharField(max_length=128)
 	option2 = models.CharField(max_length=128)
 	option3 = models.CharField(max_length=128)
-	status = models.CharField(max_length=128,default='closed')   #after the competetion status gets equal to 'open'
+	status = models.CharField(max_length=128,default='closed')
+	starting_time = models.DateTimeField(null=True, blank=True)  #after the competetion status gets equal to 'open'
 
 	def __unicode__(self):
 		return self.upvotes

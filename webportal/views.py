@@ -1,12 +1,13 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
 from webportal.models import Student,School
-import random
-import urllib2
+from random import random
+import urllib2 , datetime
 from google import search
 from bs4 import BeautifulSoup as BS 
 import json, requests, random, re
 from pprint import pprint
+from math import floor
 
 def index(request):
 
@@ -69,3 +70,13 @@ def addSchool(name,pincode):
 	except:
 		context = {"status":403,"report":"Data not saved"}
 		return context
+
+def randomProfile():
+	Profile_picture=["https://help.github.com/assets/images/help/profile/identicon.png","https://github.com/identicons/jasonlong.png","https://raw.githubusercontent.com/sehrgut/node-retricon/master/examples/images/github.png","https://avatars2.githubusercontent.com/u/163800"]
+	a = floor(random()*len(Profile_picture))
+	profile = Profile_picture[int(a)]
+	return profile
+
+def date(string):
+	dateobject = datetime.datetime.strptime(string,"%Y-%m-%d %H:%M")
+	return dateobject

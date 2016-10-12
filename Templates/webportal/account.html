@@ -6,7 +6,27 @@
     <meta charset="UTF-8">
     <title>Sign-Up/Login Form</title>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+<!-- font awesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- bootstrap -->
+
+<!-- animate.css -->
+<link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" />
+
+<!-- gallery -->
+<link rel="stylesheet" href="{% static 'assets/gallery/blueimp-gallery.min.css' %}">
+
+<!-- favicon -->
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+
+<link rel="stylesheet" href="{% static 'assets/style.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css" media="all">
     <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all"/>
@@ -17,59 +37,59 @@
   <body>
   <style type="text/css">
   #account{
-    margin-top: 6%;
+    margin-top: 10%;
+  }
+  .navbar-brand{
+    font-size: 03em;
 
-
+  }
+  .navbar{
+    height:5em !important;
   }
   </style>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Alpha-blue-trans.png" style="height:150%;display:inline-block;font-size:30%;"> ALpha coders</a>
-    </div>
+<div class="topbar animated fadeInLeftBig"></div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right " id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="account">Login/SignUp</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+             <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Alpha-blue-trans.png" style="height:250%;display:inline-block;"> ALpha coders</h3></a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right">
+                 <li class="active"><a href="/">Home</a></li>
+                 <li><a href="account" target="_blank">Login/Signup</a></li>
+                               
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!-- #Header Starts -->
+
+
     <div class="form" id="account">
       
       <ul class="tab-group">
@@ -170,7 +190,26 @@
 
         <script src= "{% static 'js/account.js' %}" ></script>
      <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    
+    <!-- jquery -->
+
+
+<!-- wow script -->
+<script src="{% static 'assets/wow/wow.min.js' %}"></script>
+
+
+<!-- boostrap -->
+
+
+<!-- jquery mobile -->
+<script src="{% static 'assets/mobile/touchSwipe.min.js' %}"></script>
+<script src="{% static 'assets/respond/respond.js' %}"></script>
+
+<!-- gallery -->
+<script src="{% static 'assets/gallery/jquery.blueimp-gallery.min.js' %}"></script>
+
+<!-- custom script -->
+<script src="{% static 'assets/script.js' %}"></script>
+
     
   </body>
 </html>
