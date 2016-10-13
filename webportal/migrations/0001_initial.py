@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
             name='Student',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('profile_picture', models.CharField(default=b'', max_length=128)),
+                ('profile_picture', models.CharField(max_length=128)),
                 ('points', models.IntegerField(default=0)),
                 ('ranking', models.IntegerField(default=-1)),
                 ('student_iD', models.CharField(unique=True, max_length=128)),
@@ -64,7 +64,7 @@ class Migration(migrations.Migration):
             name='Teachers',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('profile_picture', models.CharField(default=b'https://github.com/identicons/jasonlong.png', max_length=128)),
+                ('profile_picture', models.CharField(max_length=128, blank=True)),
                 ('name', models.CharField(max_length=128)),
                 ('mobile_no', models.CharField(max_length=128)),
                 ('password', models.CharField(max_length=128)),

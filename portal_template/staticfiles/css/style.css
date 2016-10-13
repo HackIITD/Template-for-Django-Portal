@@ -1,0 +1,86 @@
+html body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  height: 90px;
+}
+nav img {
+  float: left;
+  width: 20%;
+}
+
+.row {
+  margin-top: 40%;
+  margin-bottom: 40%;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+}
+
+ul li {
+  display: inline;
+  padding-top: 6%;
+  font-size: 220%;
+}
+
+.footer img {
+  float: left;
+  width: 20%;
+  margin-left: -1%;
+}
+
+.Text {
+  text-align: center;
+  padding-top: 10%;
+  height: 3em;
+  width: 100%;
+  color: #d32f2f;
+  font-size: 10em;
+  display: block;
+}
+
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,6 @@
 from django.db import models
-from webportal.randomprofile import randomProfile
 # Create your models here.
+from webportal.randomprofile import randomProfile
 class School(models.Model):
 	points = models.IntegerField(default = 0)
 	ranking = models.IntegerField(default = -1)             # -1 for no ranking 
@@ -12,7 +12,7 @@ class School(models.Model):
 		return self.name
 
 class Teachers(models.Model):
-	profile_picture = models.CharField(max_length=128,default=randomProfile())
+	profile_picture = models.CharField(max_length=128,blank=True)
 	name = models.CharField(max_length=128)
 	mobile_no = models.CharField(max_length=128)
 	password = models.CharField(max_length=128)
@@ -22,7 +22,7 @@ class Teachers(models.Model):
 		return self.name
 
 class Student(models.Model):
-	profile_picture = models.CharField(max_length=128,default=randomProfile())
+	profile_picture = models.CharField(max_length=128)
 	points = models.IntegerField(default = 0)
 	ranking = models.IntegerField(default = -1)             # -1 for no ranking 
 	student_iD = models.CharField(max_length=128,unique=True)
@@ -34,8 +34,8 @@ class Student(models.Model):
 	password = models.CharField(max_length=128)
 
 	def __unicode__(self):
-		return self.name
-
+		return self.student_iD
+		
 class Questions(models.Model):
 	upvotes = models.IntegerField(default = 0)
 	Ques = models.CharField(max_length=1024)
