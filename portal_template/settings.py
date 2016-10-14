@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webportal',
+    'chatbot',
 )
 
 MIDDLEWARE_CLASSES = (
