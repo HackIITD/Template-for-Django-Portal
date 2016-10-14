@@ -27,14 +27,14 @@ def index(request):
 					print x.name + x.mobile_no
 					if mobile_number == x.mobile_no and password == x.password :
 						print "Matched"
-						return render(request,"webportal/base.html",{"user_name":x.name.split(" ")[0],"error":None})
+						return render(request,"webportal/base.html",{"user_name":x.name.split(" ")[0],"error":None,"signin":0})
 				context = json.dumps({"sigin":1})		
 				print context
-				return render(request,"webportal/account.html",{"sigin":1})
+				return render(request,"webportal/account.html",{"signin":1})
 			except :
 				context = json.dumps({"sigin":1})		
 				print context
-				return render(request,"webportal/account.html",{"sigin":1})
+				return render(request,"webportal/account.html",{"signin":1})
 		elif mode == "signup":
 			try:
 				print "''''\nGot here --22---\n'''''\n"
@@ -163,4 +163,34 @@ def addques(request):
 def createevent(request):
 	d={}
 	return render(request, 'webportal/createevent.html', d)
+
+def api(request,api_call):
+	api = {}
+	if api_call.lower() == "users":
+		api["data"] = []
+		try:
+			for x in Student.objects.all():
+				add={}
+				add["name"] = x.name.decode("utf-8");
+				print "name added"
+				add["school_name"] = x.school_name.decode("utf-8")
+				print "school_name added"
+				add["student_id"] = x.student_iD.decode("utf-8")
+				add["password"] = x.password.decode("utf-8")
+				add["mobile_no"] = x.mobile_no.decode("utf-8")
+				add["ranking"] = x.ranking
+				add["points"] = x.points
+				try:
+					api["data"].append(add)
+					print "appended"
+				except:
+					print "it didnt worked"	
+			api["status"] = 200
+			return render(request,'webportal/noapi.html',{"data":api["data"],"status":200}) 
+		except:
+			api["status"] = 404
+			api["data"] = [None]
+			return render(request,'webportal/noapi.html',{"data":api})
+	else :
+		return render(request,'webportal/noapi.html',{"data":None})				
 

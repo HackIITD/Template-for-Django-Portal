@@ -32,17 +32,18 @@
     margin-top: 10%;
   }
   .navbar-brand{
-    font-size: 03em;
+    font-size: 300%;
   }
   .navbar{
     margin-top: 0.02% !important;
-    height:5.7em !important;
+    height:15% !important;
   }
   input{
-    height:2em;
+    padding-top:4%;
+    padding-bottom: 4%;
   }
   label{
-    padding-top: 2%;
+    margin-top: 4%;
   }
   </style>
 
@@ -74,7 +75,7 @@
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                  <li class="active"><a href="/">Home</a></li>
-                 <li><a href="account" target="_blank">Login/Signup</a></li>
+                 <li><a href="account">Login/Signup</a></li>
                                
               </ul>
             </div>
@@ -91,8 +92,13 @@
     <div class="form" id="account">
       
       <ul class="tab-group">
+      {% if signin %}
+        <li class="tab"><a href="#signup">Sign Up</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+        {% else %}
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
+        {% endif %}
       </ul>
       
       <div class="tab-content">

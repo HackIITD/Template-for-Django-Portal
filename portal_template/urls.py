@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',"webportal.views.index",name="homepage"),
     url(r'^account$',"webportal.views.account",name="account"),
+    url(r'^API/(?P<api_call>[a-zA-Z0-9]+)$',"webportal.views.api",name="api"),
     url(r'^facebook_auth/?$', MyChatBotView.as_view(), name='fb_callback'),
     url(r'^chatbot/?$', indexbot, name='indexbot'),
 )
