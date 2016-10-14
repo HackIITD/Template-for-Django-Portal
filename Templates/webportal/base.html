@@ -28,13 +28,11 @@
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>ALpha Coders</title>
 
-<!-- Google fonts -->
-<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'> -->
+{% block title %}
 
-<!-- font awesome -->
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
  <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/bootstrap-theme.min.css" crossorigin="anonymous">
@@ -46,411 +44,25 @@
        <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/gallery/blueimp-gallery.min.css" crossorigin="anonymous">
        
        <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/style.css" crossorigin="anonymous">
-      
+
+{% block link %}
+{% endblock %}
 
 </head>
 
 <body>
-<style type="text/css">
-  .navbar-brand{
-    font-size: 300%;
-  }
 
-  #mission{
-    margin-top: 10%;
-  }
-</style>
-<div class="topbar animated fadeInLeftBig"></div>
-
-<!-- Header Starts -->
-<div class="navbar-wrapper">
-      <div class="container">
-
-        <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="top-nav">
-          <div class="container">
-            <div class="navbar-header">
-              <!-- Logo Starts -->
-             <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Alpha-blue-trans.png" style="height:250%;display:inline-block;"> ALpha coders</h3></a>
-              <!-- #Logo Ends -->
+{% block style %}
+ 
+ {% endblock %} 
 
 
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+ {% block content %}
 
-            </div>
-
-
-            <!-- Nav Starts -->
-            <div class="navbar-collapse  collapse">
-              <ul class="nav navbar-nav navbar-right">
-                 <li class="active"><a href="/">Home</a></li>
-                 <li class="scroll"><a href="#mission">Vision</a></li>
-                 <li class="scroll"><a href="#ranking">Rankings</a></li>
-                 <li class="scroll"><a href="#contact">Contact</a></li>
-                 <li class="scroll"><a href="#team">Team</a></li>
-                 <li><a href="account">Login/Signup</a></li>
-                 <li>
-                       {% if user_name %}
-                        <div class="dropdown" style="margin-top:7%;">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                 <b>Hi {{user_name}}
-                                <span class="caret"></span></b>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="font-color:white !important;">
-                              <li ><a href="/" id="logout" style="font-color:red;">Logout</a></li>
-                              <!-- <li><a href="#">Another action</a></li>
-                              <li><a href="#">Something else here</a></li>
-                              <li role="separator" class="divider"></li>
-                              <li><a href="#">Separated link</a></li> -->
-                            </ul>
-                        </div>
-                        {% endif %}
-                 <li>
-                               
-              </ul>
-            </div>
-            <!-- #Nav Ends -->
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-<!-- #Header Starts -->
-
-
-
-
-<div id="home">
-<!-- Slider Starts -->
-<div id="myCarousel" class="carousel slide banner-slider animated flipInX" data-ride="carousel">     
-      <div class="carousel-inner">
-        <!-- Item 1 -->
-        <div class="item active">
-          <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/1.jpg" style="height:40em;" alt="banner">          
-            <div class="carousel-caption">
-            	<div class="caption-wrapper">
-            		<div class="caption-info">
-              		<h1 class="animated bounceInLeft">ALpha coders</h1>
-              		<p class="animated bounceInRight">Make the world a better place to code .</p>
-              		<a href="https://github.com/vaibsharma/ALpha-coders" target="_blank" class="btn btn-default"><i class="fa fa-flask"></i>  View Project on github</a> <div class="scroll animated fadeInUp" style="display:inline-block"><a href="#contact" class="btn btn-default"><i class="fa fa-paper-plane-o"></i> Create your own event .</a></div>
-              		</div>
-              	</div>
-            </div>
-        </div>
-        <!-- #Item 1 -->
-
-        <!-- Item 1 -->
-        <div class="item">
-          <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/2.jpg" style="height:40em;" alt="banner">          
-             <div class="carousel-caption">
-            	<div class="caption-wrapper">
-            		<div class="caption-info">
-                  <h1 class="animated bounceInLeft">ALpha coders</h1>
-                  <p class="animated bounceInRight">Lets help ALpha to compete with the best around the globe.</p>
-                  <a href="https://github.com/vaibsharma/ALpha-coders" target="_blank" class="btn btn-default"><i class="fa fa-flask"></i>  View Project on github</a> <div class="scroll animated fadeInUp" style="display:inline-block"><a href="#contact" class="btn btn-default"><i class="fa fa-paper-plane-o"></i> Create your own event .</a></div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <!-- #Item 1 -->
-
-        <!-- Item 1 -->
-        <div class="item">
-          <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/3.jpg" style="height:40em;" alt="banner">          
-             <div class="carousel-caption">
-            	<div class="caption-wrapper">
-            		<div class="caption-info">
-                  <h1 class="animated bounceInLeft">ALpha coders</h1>
-                  <p class="animated bounceInRight">ALpha hacking with her friends , want to code as ALpha does ? Create your own event .</p>
-                  <a href="https://github.com/vaibsharma/ALpha-coders" target="_blank" class="btn btn-default"><i class="fa fa-flask"></i>  View Project on github</a> <div class="scroll animated fadeInUp" style="display:inline-block"><a href="#contact" class="btn btn-default"><i class="fa fa-paper-plane-o"></i> Create your own event .</a></div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <!-- #Item 1 -->
-
-        <!-- Item 1 -->
-        <div class="item">
-          <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/4.jpg" style="height:40em;"
-          alt="banner">          
-             <div class="carousel-caption">
-            	<div class="caption-wrapper">
-            		<div class="caption-info">
-                  <h1 class="animated bounceInLeft">ALpha coders</h1>
-                  <p class="animated bounceInRight">Eat --> Code --> Sleep --> Repeat </p>
-                  <a href="https://github.com/vaibsharma/ALpha-coders" target="_blank" class="btn btn-default"><i class="fa fa-flask"></i>  View Project on github </a> <div class="scroll animated fadeInUp" style="display:inline-block"><a href="#contact" class="btn btn-default"><i class="fa fa-paper-plane-o"></i> Create your own event .</a></div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- #Item 1 -->
-        </div>
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon-chevron-left"><i class="fa fa-chevron-left"></i></a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon-chevron-right"><i class="fa fa-chevron-right"></i></span></a>
-        </div>
-      
-       
-    </div>
-
-
-
-
-
-
-
-
-
-<!-- Cirlce Starts -->
-<!-- <div id="about"  class="container spacer about">
-<h2 class="text-center wowload fadeInUp">Creative digital agency based on London</h2>  
-  <div class="row">
-  <div class="col-sm-6 wowload fadeInLeft">
-    <h4><i class="fa fa-paint-brush"></i> Design</h4>
-    <p>Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs, lead by passionate and uber progressive team that lives and breathes design. Creative digital agency for sleek and sophisticated solutions for mobile, websites and software designs.</p>
-    
-
-  </div>
-  <div class="col-sm-6 wowload fadeInRight">
-  <h4><i class="fa fa-code"></i> Frontend & Backend Development</h4>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>    
-  </div>
-  </div>
-
-  
-</div> -->
-<!-- #Cirlce Ends -->
-
-
-<!-- works -->
-<div id="mission"  class=" clearfix grid"> 
-    <figure class="effect-oscar  wowload fadeInUp">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/1.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Learn</h2>
-            <p>ALpha doesn't take stress that much . One fine day she made her own platform for learning.<br>
-            <a href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/1.jpg" title="1" data-gallery>View more</a></p>            
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/2.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Create</h2>
-            <p>Now Aplha creates her own events .<br>
-            <a href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/2.jpg" title="1" data-gallery>View more</a></p>            
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/3.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Compete.</h2>
-            <p>ALpha now can compete with Beta,Gamma,Theta,phi and other friends around the Globe<br>
-            <a href="{https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/3.jpg" title="1" data-gallery>View more</a></p>            
-        </figcaption>
-    </figure>
-     <figure class="effect-oscar  wowload fadeInUp">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/4.jpg" alt="img01"/>
-        <figcaption>
-            <h2>Future</h2>
-            <p>ALpha want to make world a better to live as well as learn. Help ALpha to achieve her goal.<br>
-            <a href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/portfolio/4.jpg" title="1" data-gallery>View more</a></p>            
-        </figcaption>
-    </figure>
-   
-
-     
-</div>
-<!-- works -->
-
-
-<div id="ranking" class="container spacer ">
-	<h2 class="text-center  wowload fadeInUp">Some of the best Institutions .</h2>
-  <div class="clearfix">
-    <div class="col-sm-6 partners  wowload fadeInLeft">
-         <ol>
-            {% for institutes in intitutions %}
-            <li>{{institutes}}</li>
-            {% endfor %}
-           </ol> 
-    </div>
-    <div class="col-sm-6">
-
-
-    <div id="carousel-testimonials" class="carousel slide testimonails  wowload fadeInRight" data-ride="carousel">
-    <div class="carousel-inner"> 
-    {% for questions in questions %}
-
-      <div class="item active animated bounceInRight row">
-      <div class="animated slideInLeft col-xs-2"><img alt="portfolio" src="https://avatars2.githubusercontent.com/u/15816834?v=3&s=96" width="100" class="img-circle img-responsive"></div>
-      <div  class="col-xs-10">
-      <p> {{questions.ques}}</p>
-          {% for options in questions.ans %}
-
-            <span>{{options}}</span>
-          {% endfor %}
-              
-      </div>
-      </div>
-      {% endfor %}
-      
-  </div>
-
-   <!-- Indicators -->
-   	<ol class="carousel-indicators">
-    <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-testimonials" data-slide-to="1"></li>
-    <li data-target="#carousel-testimonials" data-slide-to="2"></li>
-  	</ol>
-  	<!-- Indicators -->
-  </div>
-
-
-
-    </div>
-  </div>
-  </div>
-
-<!-- team -->
-<div id="team" class="container spacer ">
-<h3 class="text-center  wowload fadeInUp">Our team</h3>
-<p class="text-center  wowload fadeInLeft">Our creative team that is making everything possible</p>
-<div class="row grid team  wowload fadeInUpBig">	
-	<div class=" col-sm-4 col-xs-3">
-	<figure class="effect-chico">
-       
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/team/vaibhav.jpeg" crossorigin="anonymous" style="height:20em; width:20em" alt="img01"/>
-        <figcaption style="width:15em;">
-            <p><b>Vaibhav Sharma</b><br>Core Developer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>            
-        </figcaption>
-    </figure>
-    </div>
-
-    <div class=" col-sm-4 col-xs-3">
-	<figure class="effect-chico">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/team/pardeep.jpg" crossorigin="anonymous" style="height:20em; width:20em" alt="img01"/>
-        <figcaption style="width:15em;">            
-            <p><b>Pardeep Shaukeen</b><br>Senior Designer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>            
-        </figcaption>
-    </figure>
-    </div>
-
-    <div class=" col-sm-4 col-xs-3">
-	<figure class="effect-chico">
-        <img src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/team/rajat.jpeg" crossorigin="anonymous" style="height:20em; width:20em" alt="img01"/>
-        <figcaption style="width:15em;">
-
-            <p><b>Rajat Singhal </b><br>Senior Developer<br><br><a href="#"><i class="fa fa-dribbble"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a></p>          
-        </figcaption>
-    </figure>
-    </div>
+ {% endblock %}
 
  
-</div>
-<!-- team -->
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- About Starts -->
-<!-- <div class="highlight-info">
-<div class="overlay spacer">
-<div class="container">
-<div class="row text-center  wowload fadeInDownBig">
-	<div class="col-sm-3 col-xs-6">
-	<i class="fa fa-smile-o  fa-5x"></i><h4>{{Questions}} Questions</h4>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-	<i class="fa fa-rocket  fa-5x"></i><h4>{{events}} Events organised</h4>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-	<i class="fa fa-cloud-download  fa-5x"></i><h4>{{teachers}} Teachers</h4>
-	</div>
-	<div class="col-sm-3 col-xs-6">
-	<i class="fa fa-map-marker fa-5x"></i><h4></h4>
-	</div>
-</div>
-</div>
-</div>
-</div> -->
-<!-- About Ends -->
-
-
-
-
-
-
-
-
-<div id="contact" class="spacer">
-<!--Contact Starts-->
-<div class="container contactform center">
-<h2 class="text-center  wowload fadeInUp">Please write your suggestions , Ideas . We will be Happy to read them </h2>
-  <div class="row wowload fadeInLeftBig">      
-      <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-      <form method="POST" action="/message"> 
-      {% csrf_token %}
-      {% if user_name %}  
-        <input type="text" placeholder="{{user_name}}" name="name">
-       {% else %} 
-       <input type="text" placeholder="name" name="name">
-       {% endif %}
-        <input type="text" placeholder="Mail Id" name="mail_id">
-        <textarea rows="5" placeholder="Message" name="message"></textarea>
-        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
-        </form>
-      </div>
-  </div>
-
-
-
-</div>
-</div>
-<!--Contact Ends-->
-
-
-
-<!-- Footer Starts -->
-<div class="footer text-center spacer">
-<p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i class="fa fa-dribbble fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a href="#"><i class="fa fa-linkedin fa-2x"></i></a> </p>
-Copyright 2016 ALpha Coders. All rights reserved.
-</div>
-<!-- # Footer Ends -->
-<a href="#home" class="gototop "><i class="fa fa-angle-up  fa-3x"></i></a>
-
-
-
-
-
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title">title</h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->    
-</div>
-
-
-
-
-
-
-<!-- boostrap -->
-<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/jquery.js" crossorigin="anonymous"></script>
+ <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/jquery.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- jquery mobile -->
 
@@ -461,6 +73,8 @@ Copyright 2016 ALpha Coders. All rights reserved.
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/respond/respond.js" crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/gallery/jquery.blueimp-gallery.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/script.js" crossorigin="anonymous"></script>
+{% block script %}
+ {% endblock %}
 
-</body>
+ </body>
 </html>

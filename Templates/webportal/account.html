@@ -1,16 +1,18 @@
-{% load staticfiles %}
+{% extends 'webportal/base.html' %}
 
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
+
+    {% block title %}
     <title>Sign-Up/Login Form</title>
+    {% endblock title %}
+
+
+    {% block link %}
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
+
 <!-- font awesome -->
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/bootstrap-theme.min.css" >
@@ -23,10 +25,10 @@
               <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/normalize.css">
              <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/account.css">
              <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/style.css" >
-       
- </head>
+       {% endblock link %}
+ 
 
-  <body>
+  {% block style %}
   <style type="text/css">
   #account{
     margin-top: 10%;
@@ -46,7 +48,9 @@
     margin-top: 4%;
   }
   </style>
+{% endblock style %}
 
+{% block content %}
 <div class="topbar animated fadeInLeftBig"></div>
 
 <!-- Header Starts -->
@@ -180,7 +184,7 @@
           <div class="field-wrap">
           {% if signin %}
             <label>
-              Username not matched <span class="req">*</span>
+              Mobile Number/Password not matched <span class="req">*</span>
             </label>
             {% else %}
             <label>
@@ -202,6 +206,9 @@
       
 </div> <!-- /form -->
 
+{% endblock content %}
+
+{% block script %}
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/jquery.js" ></script>
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/js/account.js"></script> 
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/bootstrap/js/bootstrap.js"></script>
@@ -212,5 +219,5 @@
 
 
 <script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/script.js"></script>
-  </body>
-</html>
+{% endblock script %}
+  

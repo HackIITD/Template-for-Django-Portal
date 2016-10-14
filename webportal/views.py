@@ -1,4 +1,4 @@
-from django.shortcuts import render 
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from webportal.models import Student,School
 from random import random
@@ -27,7 +27,7 @@ def index(request):
 					print x.name + x.mobile_no
 					if mobile_number == x.mobile_no and password == x.password :
 						print "Matched"
-						return render(request,"webportal/base.html",{"user_name":x.name.split(" ")[0],"error":None,"signin":0})
+						return render(request,"webportal/mainpage.html",{"user_name":x.name.split(" ")[0],"mobile_number":mobile_number,"error":None,"signin":0})
 				context = json.dumps({"sigin":1})		
 				print context
 				return render(request,"webportal/account.html",{"signin":1})
@@ -53,7 +53,7 @@ def index(request):
 				status = json.loads(addStudent(first_name+" "+last_name,mobile_number,school_name,pincode,password))
 				print status["status"]
 				if status["status"] == 200 :
-					return render(request,"webportal/base.html",{"user_name":first_name,"error":None})
+					return render(request,"webportal/mainpage.html",{"user_name":first_name,"mobile_number":mobile_number,"error":None})
 				elif status["status"] == 403:
 					return render(request,"webportal/account.html",{"error":"This portal is not working properly please try after sometime"})
 
@@ -61,7 +61,7 @@ def index(request):
 				print "''''''\n----35----\n''''''"
 				return render(request,"webportal/account.html",{"error":"This portal is not working properly please try after sometime"})
 
-	return render(request,"webportal/base.html",{"data":[None]})
+	return render(request,"webportal/mainpage.html",{"data":[None]})
 
 def account(request):
 		return render(request,"webportal/account.html",{"data":[None]})	
@@ -186,11 +186,54 @@ def api(request,api_call):
 				except:
 					print "it didnt worked"	
 			api["status"] = 200
-			return render(request,'webportal/noapi.html',{"data":api["data"],"status":200}) 
+			return HttpResponse(json.dumps(api)) 
 		except:
 			api["status"] = 404
 			api["data"] = [None]
-			return render(request,'webportal/noapi.html',{"data":api})
+			return HttpResponse(json.dumps(api))
 	else :
-		return render(request,'webportal/noapi.html',{"data":None})				
+		return HttpResponse(json.dumps({"status":404,"data":[None]}))				
 
+def event(request):
+	print "I got the call"
+	context_dict = {}
+	if request.method == "POST":
+		mobile_number = request.POST.get("mobile_number")
+		print mobile_number
+		for x in Student.objects.all():
+			print x
+			if x.mobile_no == mobile_number:
+				context_dict["name"] = x.name.decode("utf-8")
+				print "name saved"
+				context_dict["school_name"] = x.school_name.decode("utf-8")
+				print "schoolname saved"
+				context_dict["student_iD"] = x.student_iD.decode("utf-8")
+				print "studentiD saved"
+				context_dict["profile_picture"] = x.profile_picture.decode("utf-8")
+				print "Profile picture saved"
+				context_dict["ranking"] = x.ranking
+				print "ranking saved"
+				context_dict["points"] = x.points
+				print "points saved"
+				try:
+					print "tryin to render"
+					return HttpResponse(json.dumps(context_dict))
+				except :
+					print "failed"
+					return HttpResponse(json.dumps({"status":"Kamyaaabi"}))
+	if request.method == "GET":
+		a = request.GET.get("z")
+		if request.GET.get("z") :
+			for x in Student.objects.all():
+				if x.student_iD == a :
+					context_dict["profile_picture"] = request.GET.get("profile_picture")
+					print context_dict["profile_picture"]
+					context_dict["name"] = request.GET.get("name")
+					context_dict["points"] = request.GET.get("points")
+					context_dict["school_name"] = request.GET.get("school_name")
+					try:
+						context_dict["status"] = 200
+					except:
+						context_dict["status"] = 404
+					return render(request,"webportal/create_event.html",context_dict)
+		return redirect("/")

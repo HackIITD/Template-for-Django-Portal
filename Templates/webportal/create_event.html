@@ -1,0 +1,134 @@
+{% extends "webportal/base.html" %}
+
+
+{% block style %}
+<style type="text/css">
+  #account{
+    margin-top: 10%;
+  }
+  .navbar-brand{
+    font-size: 300%;
+  }
+  .navbar{
+    margin-top: 0.02% !important;
+    height:15% !important;
+  }
+  input{
+    padding-top:4%;
+    padding-bottom: 4%;
+  }
+  label{
+    margin-top: 4%;
+  }
+  
+  .main{
+  	margin-top: 10%;
+  	font-size: 70%;
+  	}
+  	.image{
+  		margin-top: 0%;
+  	}
+  	#name{
+  		padding-top:4%;
+  		
+  		color: #212121;
+  	}
+  	hr{
+  		background-color: #212121 !important;
+    color: #212121 !important;
+    border: solid 2px #212121 !important;
+    height: 2px !important;
+    }
+  </style>
+{% endblock style %}
+
+
+
+{% block content %}
+
+ <div class="topbar animated fadeInLeftBig"></div>
+
+<!-- Header Starts -->
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="top-nav">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+             <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Alpha-blue-trans.png" style="height:250%;display:inline-block;"> ALpha coders</h3></a>
+              <!-- #Logo Ends -->
+
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse">
+              <ul class="nav navbar-nav navbar-right">
+                 <li class="active"><a href="/">Home</a></li>
+                 <li><a href="/">Signout</a></li>
+                               
+              </ul>
+            </div>
+            <!-- #Nav Ends -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="fluid-container">
+    	<div class="main">
+    	
+    		<div class="row">
+    			<div class="col-md-2 col-md-offset-1">
+					<img class="image" src={{profile_picture}} style="height:15em;"></img>
+				</div>
+				<div class="col-md-7" id="name">
+					<h1>{{name}}</h1>
+					<hr height="200px">
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2 col-md-offset-1">
+				<h2 class="c0l1">School Name</h2>
+			</div>
+			<div class="col-md-5" id="name">
+				<h2 class="col2">{{school_name}}</h2>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-md-offeset-4 col-md-4">
+		<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+</div>
+	</div>
+{% endblock content %}
