@@ -9,19 +9,19 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
 <!-- font awesome -->
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <!-- bootstrap -->
 
 <!-- animate.css -->
-<link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}" />
-<link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" />
+<!-- <link rel="stylesheet" href="{% static 'assets/animate/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/animate/set.css' %}" /> -->
 
 <!-- gallery -->
-<link rel="stylesheet" href="{% static 'assets/gallery/blueimp-gallery.min.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'assets/gallery/blueimp-gallery.min.css' %}"> -->
 
 <!-- favicon -->
-<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+<!-- <link rel="shortcut icon" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 
 
@@ -30,8 +30,19 @@
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css" media="all">
     <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    
-        <link rel="stylesheet" href="{% static 'css/account.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/bootstrap-theme.min.css" >
+       <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/animate/animate.css" >
+        <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/animate/set.css" > 
+        <link rel="shortcut icon" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/favicon.ico" type="image/x-icon">
+       <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/gallery/blueimp-gallery.min.css">
+      
+       <link rel="icon" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/images/favicon.ico" type="image/x-icon">
+              <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/normalize.css">
+             <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/css/account.css">
+             <link rel="stylesheet" href="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/style.css" >
+       
  </head>
 
   <body>
@@ -41,11 +52,16 @@
   }
   .navbar-brand{
     font-size: 03em;
-
   }
   .navbar{
-    margin-top: 0.43%;
-    height:5em !important;
+    margin-top: 0.02% !important;
+    height:5.7em !important;
+  }
+  input{
+    height:2em;
+  }
+  label{
+    padding-top: 2%;
   }
   </style>
 
@@ -100,7 +116,7 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1 style="font-size:3em;">Sign Up for Free</h1>
           
           <form action="/?method=signup" method="post">
            {% csrf_token %}
@@ -163,7 +179,7 @@
         </div>
         
         <div id="login">   
-          <h1>Welcome Back!</h1>
+          <h1 style="font-size:3em;">Welcome Back!</h1>
           
           <form action="/?method=signin" method="post">
           {% csrf_token %}
@@ -198,30 +214,38 @@
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
-    <script src= "{% static 'js/jquery.js' %}"></script>
+    <!-- <script src= "{% static 'js/jquery.js' %}"></script>
 
         <script src= "{% static 'js/account.js' %}" ></script>
-     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script> -->
     <!-- jquery -->
 
 
 <!-- wow script -->
-<script src="{% static 'assets/wow/wow.min.js' %}"></script>
+<!-- <script src="{% static 'assets/wow/wow.min.js' %}"></script> -->
 
 
 <!-- boostrap -->
 
 
 <!-- jquery mobile -->
-<script src="{% static 'assets/mobile/touchSwipe.min.js' %}"></script>
-<script src="{% static 'assets/respond/respond.js' %}"></script>
+<!-- <script src="{% static 'assets/mobile/touchSwipe.min.js' %}"></script>
+<script src="{% static 'assets/respond/respond.js' %}"></script> -->
 
 <!-- gallery -->
-<script src="{% static 'assets/gallery/jquery.blueimp-gallery.min.js' %}"></script>
+<!-- <script src="{% static 'assets/gallery/jquery.blueimp-gallery.min.js' %}"></script> -->
 
 <!-- custom script -->
-<script src="{% static 'assets/script.js' %}"></script>
+<!-- <script src="{% static 'assets/script.js' %}"></script> -->
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/jquery.js" ></script>
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/js/account.js"></script> 
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/bootstrap/js/bootstrap.js"></script>
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/wow/wow.min.js"></script>
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/mobile/touchSwipe.min.js"></script>
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/respond/respond.js" ></script>
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/gallery/jquery.blueimp-gallery.min.js" ></script>
 
-    
+
+<script src="https://cdn.rawgit.com/HackIITD/Template-for-Django-Portal/master/staticfiles/assets/script.js"></script>
   </body>
 </html>
